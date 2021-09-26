@@ -26,7 +26,11 @@ const routes = [
     component: () =>
       import(/* webpackChunkName:"parent" */ "../views/Parent.vue"),
   },
- 
+  {
+    path: "/tree",
+    name: "Tree",
+    component: () => import(/* webpackChunkName:"tree" */"../views/Tree.vue"),
+  },
 ];
 
 const router = new VueRouter({
