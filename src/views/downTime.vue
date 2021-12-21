@@ -299,6 +299,9 @@ export default {
       }
       return data;
     },
+    getDataList(){
+        
+    }
   },
 };
 </script>

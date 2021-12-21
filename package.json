@@ -6,13 +6,15 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start":"json-server --watch json_server_mock/db.json"
+    "start": "json-server --watch json_server_mock/db1.json"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.6",
     "json-server": "^0.17.0",
     "node-sass": "^4.14.1",
+    "qs": "^6.10.2",
     "sass-loader": "^8.0.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
