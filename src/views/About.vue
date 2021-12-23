@@ -6,3 +6,17 @@
     <div><router-link to="/home/table">element UI 实现动态生成多级表头</router-link></div>
   </div>
 </template>
+<script>
+export default {
+  
+}
+</script>
+<style lang="scss" scoped>
+   .about{
+     display: flex;
+     flex-wrap: wrap;
+     div{
+       width:290px;
+     }
+   }
+</style>
