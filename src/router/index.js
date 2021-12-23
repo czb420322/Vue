@@ -37,6 +37,11 @@ const routes = [
     path:"/home/table",
     name:"Table",
     component:()=>import("../views/table/MultiTable.vue")
+  },
+  {
+    path:'/home/scroll',
+    name:"Scroll",
+    component:()=>import("../views/tigers/RunScrollNum.vue")
   }
 ]
 
