@@ -27,6 +27,16 @@ const routes = [
     path:"/home/elementTable",
     name:"ElementTable",
     component:()=>import("../views/ElementTable.vue")
+  },
+  {
+    path:"/home/image",
+    name:"Image",
+    component:()=>import("../views/Image.vue")
+  },
+  {
+    path:"/home/table",
+    name:"Table",
+    component:()=>import("../views/table/MultiTable.vue")
   }
 ]
 
