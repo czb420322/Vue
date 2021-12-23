@@ -22,6 +22,11 @@ const routes = [
     path:'/home/downTime',
     name:"DownTime",
     component:()=>import('../views/downTime.vue')
+  },
+  {
+    path:"/home/elementTable",
+    name:"ElementTable",
+    component:()=>import("../views/ElementTable.vue")
   }
 ]
 
