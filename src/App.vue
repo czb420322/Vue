@@ -17,3 +17,9 @@
   color #2c3e50
   margin-top 60px
 </style>
+<style >
+  a{
+    text-decoration: none;
+    color: black;
+  }
+</style>
