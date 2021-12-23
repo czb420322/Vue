@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted () {
-    setInterval(() => this.num++, 10000)
+    setInterval(() => this.num++, 5000)
   }
 }
 </script>
