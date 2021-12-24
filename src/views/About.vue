@@ -6,6 +6,7 @@
     <div><router-link to="/home/table">element UI 实现动态生成多级表头</router-link></div>
     <div><router-link to="/home/scroll">老虎机滚动的数字</router-link></div>
     <div><router-link to="/home/tree">Tree树形结构</router-link></div>
+    <div><router-link to="/home/echarts">Echarts图表的使用</router-link></div>
   </div>
 </template>
 <script>

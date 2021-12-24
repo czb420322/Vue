@@ -47,6 +47,11 @@ const routes = [
     path:"/home/tree",
     name:"Tree",
     component:()=>import("../views/tree/ParentMenueTree.vue")
+  },
+  {
+    path:"/home/echarts",
+    name:"Echarts",
+    component:()=>import("../views/echarts/Echarts.vue")
   }
 ]
 
