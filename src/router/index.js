@@ -42,6 +42,11 @@ const routes = [
     path:'/home/scroll',
     name:"Scroll",
     component:()=>import("../views/tigers/RunScrollNum.vue")
+  },
+  {
+    path:"/home/tree",
+    name:"Tree",
+    component:()=>import("../views/tree/ParentMenueTree.vue")
   }
 ]
 

@@ -192,5 +192,173 @@
                 }
             ]
         }
+    ],
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [],
+                    "createTime": "2019-10-25 00:07:21",
+                    "desc": "教务处",
+                    "engName": "dean's office Administrator",
+                    "id": 5,
+                    "index": "5",
+                    "modifyTime": "2019-10-29 01:44:25",
+                    "name": "教务",
+                    "parentId": 1,
+                    "sysId": 1
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "createTime": "2019-10-29 01:13:42",
+                            "desc": "小小",
+                            "engName": "lemon",
+                            "id": 14,
+                            "index": "14",
+                            "name": "小小的角色",
+                            "parentId": 4,
+                            "sysId": 2
+                        },
+                        {
+                            "children": [],
+                            "createTime": "2019-10-29 01:17:50",
+                            "desc": "哈哈哈",
+                            "engName": "lenmon",
+                            "id": 15,
+                            "index": "15",
+                            "name": "芒果的角色",
+                            "parentId": 4,
+                            "sysId": 2
+                        },
+                        {
+                            "children": [],
+                            "createTime": "2019-10-29 01:19:23",
+                            "desc": "啦啦",
+                            "engName": "sweet",
+                            "id": 16,
+                            "index": "16",
+                            "name": "多糖的角色",
+                            "parentId": 4,
+                            "sysId": 1
+                        },
+                        {
+                            "children": [],
+                            "createTime": "2019-10-29 01:56:45",
+                            "desc": "啦啦",
+                            "engName": "mingming",
+                            "id": 20,
+                            "index": "20",
+                            "name": "明明的角色",
+                            "parentId": 4,
+                            "sysId": 1
+                        },
+                        {
+                            "children": [],
+                            "createTime": "2019-10-29 02:02:50",
+                            "desc": "哈哈",
+                            "engName": "pupu",
+                            "id": 21,
+                            "index": "21",
+                            "name": "朴朴的角色",
+                            "parentId": 4,
+                            "sysId": 1
+                        }
+                    ],
+                    "createTime": "2019-10-25 00:07:20",
+                    "desc": "管理员",
+                    "engName": "Administrator",
+                    "id": 4,
+                    "index": "4",
+                    "modifyTime": "2019-10-25 00:08:12",
+                    "name": "管理员",
+                    "parentId": 1,
+                    "sysId": 1
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "createTime": "2019-10-29 01:50:28",
+                            "desc": "sf ",
+                            "engName": "lenmon",
+                            "id": 19,
+                            "index": "19",
+                            "name": "仓库管理员",
+                            "parentId": 6,
+                            "sysId": 1
+                        }
+                    ],
+                    "createTime": "2019-10-25 00:07:21",
+                    "desc": "设备管理员",
+                    "engName": "device Administrator",
+                    "id": 6,
+                    "index": "6",
+                    "modifyTime": "2019-10-25 00:09:50",
+                    "name": "设备管理员",
+                    "parentId": 1,
+                    "sysId": 1
+                }
+            ],
+            "createTime": "2019-10-15 19:17:11",
+            "desc": "管理员",
+            "engName": "Super Administrator",
+            "id": 1,
+            "index": "1",
+            "modifyTime": "2019-10-18 23:00:41",
+            "name": "超级管理员",
+            "parentId": 0,
+            "sysId": 1
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "createTime": "2019-10-29 01:42:44",
+                    "desc": "班主任",
+                    "engName": "class Manager",
+                    "id": 17,
+                    "index": "17",
+                    "modifyTime": "2019-10-29 01:43:41",
+                    "name": "班主任",
+                    "parentId": 3,
+                    "sysId": 2
+                }
+            ],
+            "createTime": "2019-10-18 19:58:49",
+            "desc": "老师",
+            "engName": "Teacher",
+            "id": 3,
+            "index": "3",
+            "modifyTime": "2019-10-29 01:43:22",
+            "name": "老师",
+            "parentId": 0,
+            "sysId": 2
+        },
+        {
+            "children": [],
+            "createTime": "2019-10-18 19:58:48",
+            "desc": "学生",
+            "engName": "Student",
+            "id": 2,
+            "index": "2",
+            "modifyTime": "2019-10-29 01:43:18",
+            "name": "学生",
+            "parentId": 0,
+            "sysId": 2
+        },
+        {
+            "children": [],
+            "createTime": "2019-10-26 02:19:41",
+            "desc": "家长",
+            "engName": "patriarch",
+            "id": 13,
+            "index": "13",
+            "modifyTime": "2019-10-26 02:21:53",
+            "name": "家长",
+            "parentId": 0,
+            "sysId": 1
+        }
     ]
 }
