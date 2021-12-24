@@ -11,7 +11,7 @@ import 'gridmanager-vue/css/gm-vue.css';
 Vue.use(GridManager);
 Vue.use(ElementUI);
 Vue.prototype.$http =axios;//设置axios为全局；
-Vue.prototype.$qs =Qs;//设置qs位全局，分离formdata数据
+Vue.prototype.$qs =Qs;//设置qs位全局，分离formData数据
 Vue.config.productionTip = false
 
 new Vue({

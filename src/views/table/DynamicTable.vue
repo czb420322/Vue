@@ -1,7 +1,7 @@
 <template>
   <el-table :data="tableData" border :height="height">
     <template v-for="item in tableHeader">
-      <table-column v-if="item.children && item.children.length" :key="item.id" :coloumn-header="item"></table-column>
+      <table-column v-if="item.children && item.children.length" :key="item.id" :column-header="item"></table-column>
       <el-table-column v-else :key="item.id" :label="item.label" :prop="item.prop" align="center"></el-table-column>
     </template>
   </el-table>

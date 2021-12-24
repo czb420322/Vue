@@ -37,7 +37,7 @@
             <editable-cell
               v-model="row[key2]"
               slot-scope="{row}"
-              :can-edit="(key2.indexOf('remark')===-1) ? disabled : abled"
+              :can-edit="(key2.indexOf('remark')===-1) ? disabled : able"
             >
               <span slot="content">{{ row[key2] }}</span>
             </editable-cell>
@@ -58,7 +58,7 @@ export default {
   data() {
     return {
       disabled: false, // 表格可编辑
-      abled: true, // 表格不可编辑
+      able: true, // 表格不可编辑
 
       labelList: {}, // 用于存放一级表头
       tableData_show: {} // 页面表格渲染数据

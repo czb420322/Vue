@@ -2,7 +2,7 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <SceenFull />
+    <ScreenFull />
     <!--列设置按钮-->
     <el-dropdown trigger="click">
       <el-button icon="el-icon-s-operation" size="mini">列设置</el-button>
@@ -40,7 +40,7 @@
         }"
         @row-click="handelTableClick"
         @selection-change="handleSelectionChange"
-        @header-dragend="surverWidth"
+        @header-dragend="surveyWidth"
         border
         size="mini"
         tooltip-effect="dark"
@@ -204,7 +204,7 @@ export default {
       // ... 省略业务逻辑
     },
     // 表头拖动事件
-    surverWidth(newWidth, oldWidth, column, event) {
+    surveyWidth(newWidth, oldWidth, column, event) {
       this.columns = this.columns.map((v) => {
         if (v.prop === column.property) v.width = newWidth;
         return v;
