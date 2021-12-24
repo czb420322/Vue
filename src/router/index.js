@@ -31,7 +31,7 @@ const routes = [
   {
     path:"/home/image",
     name:"Image",
-    component:()=>import("../views/Image.vue")
+    component:()=>import("../views/EditableCell.vue")
   },
   {
     path:"/home/table",

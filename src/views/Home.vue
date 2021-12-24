@@ -2,6 +2,7 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <SceenFull />
     <!--列设置按钮-->
     <el-dropdown trigger="click">
       <el-button icon="el-icon-s-operation" size="mini">列设置</el-button>
@@ -113,6 +114,8 @@
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
+ import ScreenFull from '@/components/ScreenFull.vue'
+
 let person = { name: "张三", age: 25, address: "深圳", getName: function() {} };
 Object.keys(person).map((key) => {
   return person[key]; // 获取到属性对应的值,做一些处理
@@ -121,6 +124,8 @@ export default {
   name: "Home",
   components: {
     // HelloWorld
+ // eslint-disable-next-line vue/no-unused-components
+     ScreenFull
   },
   data() {
     return {
