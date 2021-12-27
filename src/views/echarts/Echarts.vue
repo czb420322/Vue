@@ -1,7 +1,6 @@
 <template>
     <div>  
-  <div ref="loginTimes" class="block-up-login" style="width:100%;height:100%"></div>
-
+     <div ref="loginTimes" class="block-up-login" style="width:100%;height:100%"></div>
     </div>
 </template>
 <script>

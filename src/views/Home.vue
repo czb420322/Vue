@@ -1,222 +1,112 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-02 13:22:41
+ * @LastEditTime: 2021-12-03 14:02:06
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \app\src\views\Home.vue
+-->
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <ScreenFull />
-    <!--列设置按钮-->
-    <el-dropdown trigger="click">
-      <el-button icon="el-icon-s-operation" size="mini">列设置</el-button>
-      <el-dropdown-menu slot="dropdown">
-        <span class="title">列设置</span>
-        <el-tree
-          draggable
-          :data="columns"
-          :props="defaultProps"
-          :allow-drop="allowDrop"
-          @node-drop="handleDrop"
-        >
-          <span class="tree-table-setting" slot-scope="{ node, data }">
-            <el-switch @change="saveTableColumns" v-model="data.show">
-            </el-switch>
-            <span>{{ node.label }}</span>
-          </span>
-        </el-tree>
-      </el-dropdown-menu>
-    </el-dropdown>
-
-    <!--表格-->
-    <div>
-      <el-table
-        :key="tableKey"
-        :data="tableData"
-        :height="tableHeight"
-        :row-style="{ height: '40px' }"
-        :cell-style="{ borderRight: 'none' }"
-        :header-cell-style="{
-          height: '40px',
-          padding: 0,
-          background: '#f6f8fa',
-          color: '#333',
-        }"
-        @row-click="handelTableClick"
-        @selection-change="handleSelectionChange"
-        @header-dragend="surveyWidth"
-        border
-        size="mini"
-        tooltip-effect="dark"
-        highlight-current-row
-      >
-        <el-table-column align="center" type="selection"> </el-table-column>
-        <template v-for="item in columns">
-          <el-table-column
-            v-if="item.show"
-            show-overflow-tooltip
-            :prop="item.prop"
-            :sortable="item.sortable"
-            :label="item.label"
-            :width="item.width"
-            :key="item.prop"
-            :resizable="item.resizable"
-          >
-            <template slot-scope="scope">
-              <span v-if="item.prop === 'clue_type'">{{
-                scope.row[item.prop] | clueType
-              }}</span>
-              <span v-else-if="item.prop === 'clue_source'">{{
-                scope.row[item.prop] | clueSource
-              }}</span>
-              <span v-else-if="item.prop === 'contact_type'">{{
-                scope.row[item.prop] | commonType
-              }}</span>
-              <span v-else-if="item.prop === 'company_name'" class="link">{{
-                scope.row[item.prop]
-              }}</span>
-              <span v-else>{{ scope.row[item.prop] }}</span>
-            </template>
-          </el-table-column>
-        </template>
-        <!-- 固定列 -->
-        <el-table-column fixed="right" label="关注" width="56">
-          <template slot-scope="scope">
-            <el-button
-              style="height: 10px;padding:0; margin:0;"
-              type="text"
-              @click.native.stop="clueTableRowClick(scope.row, 'collect')"
-              size="mini"
-            >
-              <img
-                v-if="scope.row.collect === 1"
-                style="width:16px"
-                src="../assets/logo.png"
-              />
-              <img v-else style="width:16px" src="../assets/logo.png" />
-            </el-button>
-          </template>
-        </el-table-column>
-        <el-table-column fixed="right" label="编辑" width="56">
-          <template slot-scope="scope">
-            <el-button
-              style="height: 10px;padding:0; margin:0;"
-              type="text"
-              @click.native.stop="clueTableRowClick(scope.row, 'edit')"
-              size="mini"
-            >
-              <img style="width:16px" src="../assets/logo.png" />
-            </el-button>
-          </template>
-        </el-table-column>
-        <el-table-column> </el-table-column>
-      </el-table>
+  <div class="home" ref="home">
+    <div class="left_container">
+      <div class="left_top">
+        <line-chart-page/>
+      </div>
+      <div class="left_center">
+        <line-chart-page/>
+      </div>
+      <div class="left_bottom">
+        <line-chart-page/>
+      </div>
+    </div>
+    <div class="center_container">
+      <div class="center_top">
+        <Map/>
+      </div>
+      <div class="center_bottom">
+        <bar-chart-page/>
+      </div>
+    </div>
+    <div class="right_container">
+      <div class="right_top">
+        <line-chart-page/>
+      </div>
+      <div class="right_center">
+        <line-chart-page/>
+      </div>
+      <div class="right_bottom">
+        <line-chart-page/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
- import ScreenFull from '@/components/ScreenFull.vue'
+import Map from '../components/map.vue'
+import BarChartPage from '@/views/BarChartPage'
+// import styleUtil from '@/utils/styleUtil.js'
+import LineChartPage from '@/views/LineChartPage/index'
 
-let person = { name: "张三", age: 25, address: "深圳", getName: function() {} };
-Object.keys(person).map((key) => {
-  return person[key]; // 获取到属性对应的值,做一些处理
-});
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    // HelloWorld
- // eslint-disable-next-line vue/no-unused-components
-     ScreenFull
+    LineChartPage,
+    Map,
+    BarChartPage
   },
-  data() {
-    return {
-      // 表格key
-      tableKey: 1,
-      // 表格数据
-      tableData: [],
-      // 默认表格高度
-      tableHeight: 600,
-      // 表格展示项配置
-      columns: [
-        {
-          prop: "name", // 对应列内容的字段名
-          label: "姓名", // 显示的标题
-          width: 66, // 对应列的宽度
-          resizable: true, // 对应列是否可以通过拖动改变宽度（需要在 el-table 上设置 border 属性为真）
-          show: true, // 展示与隐藏
-          sortable: false, // 对应列是否可以排序
-        },
-        {
-          prop: "clue_type",
-          label: "线索类型",
-          width: 78,
-          resizable: true,
-          show: true,
-          sortable: false,
-        },
-        // ... 省略部分字段
-      ],
-      // 列设置中 tree配置
-      defaultProps: {
-        children: "children",
-        label: "label",
-      },
-    };
+  mounted () {
+    // const dom = document.createElement('div')
+    // this.$refs.home.append(dom)
+    // dom.style.width = styleUtil.px2vw(300)
+    // dom.style.height = styleUtil.px2vw(500)
+    // dom.style.background = '#ccc'
   },
-  mounted() {
-    this.init();
-    const winHeight = document.body.clientHeight;
-    // 窗口大小 - 表格顶部高度
-    this.tableHeight = winHeight - 260;
-  },
-  methods: {
-    init() {
-      // 判断本地是否有表格配置数据 ？ 加载 : 忽略
-      // 获取表格数据
-      // 重设表格高度
-    },
-    allowDrop(draggingNode, dropNode, type) {
-      // 仅允许Tree节点上下拖动
-      return type !== "inner";
-    },
-    // Tree 拖动时更新表格
-    handleDrop() {
-      this.tableKey++;
-      // 保存表格配置
-      this.saveTableColumns();
-    },
-    // 重置表格列设置
-    resetTable() {
-      // ... 忽略
-    },
-    // 显示隐藏切换 && 保存表格配置
-    saveTableColumns() {
-      // setStorage 封装了 localStorage
-      localStorage.setItem("clueTable", this.columns);
-    },
-    // 选中表格行
-    handelTableClick(row) {
-      console.log(row);
-      // ... 省略业务逻辑
-    },
-    // table多选操作
-    handleSelectionChange(val) {
-      console.log(val);
-      // ... 省略业务逻辑
-    },
-    // 表头拖动事件
-    surveyWidth(newWidth, oldWidth, column, event) {
-      this.columns = this.columns.map((v) => {
-        if (v.prop === column.property) v.width = newWidth;
-        return v;
-      });
-      this.saveTableColumns();
-      console.log(event);
-    },
-    // 关注与编辑操作
-    clueTableRowClick(val, type) {
-      console.log(val, type);
-      // ... 省略业务逻辑
-    },
-  },
-};
+  data () {
+    return {}
+  }
+}
 </script>
+<style  lang="scss">
+.home {
+  display: flex;
+  box-sizing: border-box;
+  padding: vh(20);
+
+  .left_container,
+  .right_container {
+    > div {
+      min-width: 250px;
+      width: vw(450);
+      height: vh(330);
+      background: rgb(202, 202, 202);
+      border-radius: 10px;
+    }
+
+    .left_center,
+    .right_center {
+      margin: vh(20) 0;
+    }
+  }
+
+  .center_container {
+    // 需要设置一个最小宽高，否则再绘图的时候，发现宽高为0的话会引起Echarts报错
+    min-width: 600px;
+    width: vw(1200);
+    height: vh(500);
+    margin: 0 vh(20);
+
+    .center_top {
+      height: vh(680);
+      background: rgb(202, 202, 202);
+      border-radius: vh(10);
+    }
+
+    .center_bottom {
+      height: vh(330);
+      margin-top: vh(20);
+      background: rgb(202, 202, 202);
+      border-radius: vh(10);
+    }
+  }
+}
+</style>
